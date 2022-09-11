@@ -1,28 +1,23 @@
-* File: 0-positive_or_negative.c
-*
-*/
-
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
 /**
- * main - prints a random number and states whether
- * 	  it is positive, negative, or zero.
- * Return: Always 0.
-*/
+ * main - main block
+ * Description: Print statements based on the last digit of the random number.
+ * Return: 0
+ */
 int main(void)
 {
-	int n;
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-
-	if (n > 0)
-		printf("%d is positive\n", n);
-	else if (n > 0)
-		printf("%d is negative\n", n);
-	else
-		printf("%d is zero\n, n);
-
-	return (0);
+int n;
+int m;
+srand(time(0));
+n = rand() - RAND_MAX / 2;
+m = n % 10;
+if (m > 5)
+printf("Last digit of %i is %i and is greater than 5\n", n, m);
+else if (m == 0)
+printf("Last digit of %i is %i and is 0\n", n, m);
+else
+printf("Last digit of %i is %i and is less than 6 and not 0\n", n, m);
+return (0);
 }
